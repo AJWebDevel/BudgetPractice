@@ -4,8 +4,7 @@ import { AppContext } from '../Context/AppContext';
 
 
 export const ExpenseList = () => {
-    const expenses = useContext(AppContext);
-
+    const { expenses } = useContext(AppContext);
     return (
         <ul>
             {expenses.map((expense) => (

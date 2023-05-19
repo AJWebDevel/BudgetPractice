@@ -28,7 +28,7 @@ export const App = () => {
         <div>
           <div>
 
-            {/* <ExpenseList /> */}
+            <ExpenseList />
           </div>
         </div>
         <h2>Add Expense</h2>
