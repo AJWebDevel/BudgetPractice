@@ -1,14 +1,30 @@
-import React, { useState } from "react";
-export const AddExpense = () => {
-    const [name, setName] = useState("");
-    const [cost, setCost] = useState("");
+import React, { useState, useContext } from "react";
+import { AppContext } from "../Context/AppContext";
+import { v4 as uuidv4 } from 'uuid';
+
+export const AddExpenseForm = () => {
+    const { dispatch } = useContext(AppContext);
+
+    const [name, setName] = useState('');
+    const [cost, setCost] = useState('');
 
     const onSubmit = (event) => {
         event.preventDefault();
-        alert('name' + name + 'cost' + cost)
-    }
+
+        const expense = {
+            id: uuidv4(),
+            name: name,
+            cost: parseInt(cost)
+        };
+
+        dispatch({
+            type: 'ADD_EXPENSE',
+            payload: expense,
+        })
+    };
+
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <div>
                 <label>Name</label>
                 <input required="required"
@@ -30,7 +46,7 @@ export const AddExpense = () => {
                 </input>
             </div>
             <div>
-                <button type="button" onClick={onSubmit}> Save</button>
+                <button type="button"> Save</button>
             </div>
         </form>
     )
