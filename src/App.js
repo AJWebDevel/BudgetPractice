@@ -4,7 +4,7 @@ import { Budget } from "./Components/Budget";
 import { Remaining } from "./Components/Remaining";
 import { Total } from "./Components/Total";
 import { ExpenseList } from "./Components/ExpenseList";
-import { AddExpense } from "./Components/AddExpenseForm";
+import { AddExpenseForm } from "./Components/AddExpenseForm";
 import { AppProvider } from './Context/AppContext';
 
 export const App = () => {
@@ -34,7 +34,7 @@ export const App = () => {
         <h2>Add Expense</h2>
         <div>
           <div>
-            <AddExpense />
+            <AddExpenseForm />
           </div>
         </div>
       </div>
